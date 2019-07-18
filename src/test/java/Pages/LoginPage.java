@@ -24,13 +24,15 @@ public class LoginPage {
         @FindBy(xpath ="//button[@type='submit']" )
     public WebElement logInButton;
 
-   // WebElement eventsButton = Driver.getDriver().findElement(By.xpath("(//span[@class='oe_menu_text'])[10]"));
-     //   eventsButton.click();
+   
+        @FindBy(xpath = "//span[@class='oe_menu_text'])[10]")
+     public WebElement eventsButton;
 
     public void logginIn(String username, String password){
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         logInButton.click();
+        eventsButton.click();
     }
 
 }
