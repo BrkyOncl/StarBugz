@@ -24,8 +24,8 @@ public class LoginPage {
         @FindBy(xpath ="//button[@type='submit']" )
     public WebElement logInButton;
 
-   
-        @FindBy(xpath = "//span[@class='oe_menu_text'])[10]")
+
+        @FindBy(xpath = "//a[@href='/web#menu_id=124&action=']")
      public WebElement eventsButton;
 
     public void logginIn(String username, String password){
