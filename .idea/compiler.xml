@@ -9,6 +9,7 @@
         <module name="smoke-3" />
         <module name="newStarbugs" />
         <module name="StarBugz" />
+        <module name="StarBugz4" />
       </profile>
     </annotationProcessing>
   </component>
