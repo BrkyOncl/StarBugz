@@ -21,6 +21,8 @@ public class HomePage {
 
     @FindBy (xpath = "//img[@src='http://54.148.96.210/web/binary/company_logo?db=BriteErpDemo&company=1']")
         public WebElement logo;
+    @FindBy (xpath = "//div[@class='o_sub_menu_footer']")
+    public WebElement footer;
     @FindBy (xpath = "//button[@aria-label='calendar']")
     public WebElement calendarButton;
     @FindBy (xpath = "//button[@aria-label='list']")
@@ -31,6 +33,8 @@ public class HomePage {
     public  WebElement previousButton;
     @FindBy (xpath = "//button[@aria-label='Next']")
     public  WebElement nextButton;
+    @FindBy (xpath = "//span[@class = 'o_pager_value']")
+    public WebElement currentPageInfo;
 
 
 
