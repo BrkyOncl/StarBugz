@@ -19,6 +19,21 @@ public class HomePage {
 
     }
 
+    @FindBy (xpath = "//img[@src='http://54.148.96.210/web/binary/company_logo?db=BriteErpDemo&company=1']")
+        public WebElement logo;
+    @FindBy (xpath = "//button[@aria-label='calendar']")
+    public WebElement calendarButton;
+    @FindBy (xpath = "//button[@aria-label='list']")
+    public  WebElement listButton;
+    @FindBy (xpath = "//button[@aria-label='pivot']")
+    public  WebElement pivotButton;
+    @FindBy (xpath = "//button[@aria-label='Previous']")
+    public  WebElement previousButton;
+    @FindBy (xpath = "//button[@aria-label='Next']")
+    public  WebElement nextButton;
+
+
+
     @FindBy(xpath = "//div[@class='o_facet_values']")
     public WebElement searchUpcomingButton;
 
