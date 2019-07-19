@@ -6,12 +6,12 @@ import utilities.Driver;
 
 public class Aigerim {
     @Test
-    public void logInToWebsite(){
+    public void logInToWebsite() throws InterruptedException {
         Driver.getDriver().get("http://54.148.96.210/web/login");
-
-        LoginPage blp = new LoginPage();
-        blp.logginIn("EventsCRM_Manager5@info.com",
-                "Ugh45wQ16");
+        LoginPage lp = new LoginPage();
+        lp.logginIn("EventsCRM_Manager5@info.com", "Ugh45wQ16");
+        Thread.sleep(3000);
+        lp.eventsButton.click();
 
     }
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LoginPage {
-    WebDriver driver;
+   private WebDriver driver;
 
     public LoginPage(){
         driver = Driver.getDriver();
@@ -16,23 +16,24 @@ public class LoginPage {
     }
     @FindBy(xpath = "//input[@id='login']")
 
-    public WebElement usernameInput;
+    private WebElement usernameInput;
 
     @FindBy(xpath = "//input[@id='password']")
-       public WebElement passwordInput;
+       private WebElement passwordInput;
 
         @FindBy(xpath ="//button[@type='submit']" )
-    public WebElement logInButton;
+    private WebElement logInButton;
 
-
-        @FindBy(xpath = "//a[@href='/web#menu_id=124&action=']")
+   
+        @FindBy(xpath = "(//a[@class='oe_menu_toggler'])[6]/span")
      public WebElement eventsButton;
 
-    public void logginIn(String username, String password){
+    public void logginIn(String username, String password) throws InterruptedException {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         logInButton.click();
-        eventsButton.click();
+
+
     }
 
 }
