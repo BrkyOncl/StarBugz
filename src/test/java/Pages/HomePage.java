@@ -70,6 +70,9 @@ public class HomePage {
     @FindBy(xpath = "//ul[@class='dropdown-menu o_favorites_menu']/li")
     public List<WebElement> favoritesDropdownDetails;
 
+    @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']")
+    public WebElement createButton;
+
 
 
 

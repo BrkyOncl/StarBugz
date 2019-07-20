@@ -4,6 +4,7 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Config;
 import utilities.Driver;
 
 import java.util.Properties;
@@ -12,9 +13,9 @@ public class Aigerim {
     @Test
     public void logInToWebsite() throws InterruptedException {
         Properties p = new Properties();
-        Driver.getDriver().get("http://54.148.96.210/web/login");
+        Driver.getDriver().get(Config.getProperty("url"));
         LoginPage lp = new LoginPage();
-        lp.logginIn("EventsCRM_Manager5@info.com", "Ugh45wQ16");
+        lp.logginIn(Config.getProperty("username"), Config.getProperty("password"));
         Thread.sleep(3000);
         lp.eventsButton.click();
         HomePage hp = new HomePage();
@@ -30,7 +31,7 @@ public class Aigerim {
         String expected = "1-80";
         Assert.assertEquals(hp.currentPageInfo.getText(),expected);
         hp.nextButton.click();
-        String expectedAfterClicking = "81-121";
+        String expectedAfterClicking = "81-126";
         Assert.assertEquals(hp.currentPageInfo.getText(),expectedAfterClicking);
 
 
