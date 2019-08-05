@@ -31,7 +31,7 @@ public class Aigerim {
         String expected = "1-80";
         Assert.assertEquals(hp.currentPageInfo.getText(),expected);
         hp.nextButton.click();
-        String expectedAfterClicking = "81-115";
+        String expectedAfterClicking = "81-117";
         Assert.assertEquals(hp.currentPageInfo.getText(),expectedAfterClicking);
 
 
