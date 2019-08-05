@@ -10,6 +10,7 @@
         <module name="newStarbugs" />
         <module name="StarBugz" />
         <module name="StarBugz4" />
+        <module name="StarBugz1" />
       </profile>
     </annotationProcessing>
   </component>
