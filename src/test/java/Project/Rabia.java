@@ -16,7 +16,7 @@ public class Rabia {
         Driver.getDriver().get("http://54.148.96.210/web/login");
         LoginPage lp = new LoginPage();
         lp.logginIn("EventsCRM_Manager5@info.com", "Ugh45wQ16");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         lp.eventsButton.click();
 
         HomePage hp = new HomePage();
@@ -31,8 +31,10 @@ public class Rabia {
         Driver.getDriver().get("http://54.148.96.210/web/login");
         LoginPage lp = new LoginPage();
         lp.logginIn("EventsCRM_Manager5@info.com", "Ugh45wQ16");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         lp.eventsButton.click();
+        Thread.sleep(5000);
+
         HomePage hp = new HomePage();
         Thread.sleep(5000);
         hp.plusSign.click();
@@ -40,6 +42,8 @@ public class Rabia {
         Assert.assertTrue(hp.groupByDropdown.isDisplayed(),"Group By button is Not display as expected");
         Assert.assertTrue(hp.favoritesDropDown.isDisplayed(),"Favorites button is Not display as expected");
         Assert.assertTrue(hp.minusSign.isDisplayed());
+        Thread.sleep(5000);
+
         hp.minusSign.click();
 
 
@@ -50,19 +54,25 @@ public class Rabia {
         Driver.getDriver().get("http://54.148.96.210/web/login");
         LoginPage lp = new LoginPage();
         lp.logginIn("EventsCRM_Manager5@info.com", "Ugh45wQ16");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         lp.eventsButton.click();
         HomePage hp = new HomePage();
         Thread.sleep(5000);
         hp.plusSign.click();
+        Thread.sleep(5000);
 
         hp.filtersDropdown.click();
+        Thread.sleep(5000);
+
         int expectedDetailsOfFiltersDropdown = 13;
         Assert.assertTrue(hp.filtersDropdownDetails.size() == expectedDetailsOfFiltersDropdown);
 
         hp.groupByDropdown.click();
+        Thread.sleep(5000);
+
         int expectedDetailsOfGroupByDropdown =8;
         Assert.assertTrue(hp.groupbyDropdownDetails.size() == expectedDetailsOfGroupByDropdown);
+        Thread.sleep(5000);
 
         hp.favoritesDropDown.click();
         int expectedDetailsOfFavoritesDropdown = 11;

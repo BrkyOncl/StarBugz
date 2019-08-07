@@ -12,7 +12,6 @@ import java.util.Properties;
 public class Aigerim {
     @Test
     public void logInToWebsite() throws InterruptedException {
-        Properties p = new Properties();
         Driver.getDriver().get(Config.getProperty("url"));
         LoginPage lp = new LoginPage();
         lp.logginIn(Config.getProperty("username"), Config.getProperty("password"));
@@ -31,7 +30,7 @@ public class Aigerim {
         String expected = "1-80";
         Assert.assertEquals(hp.currentPageInfo.getText(),expected);
         hp.nextButton.click();
-        String expectedAfterClicking = "81-115";
+       String  expectedAfterClicking = "81-117";
         Assert.assertEquals(hp.currentPageInfo.getText(),expectedAfterClicking);
 
 
