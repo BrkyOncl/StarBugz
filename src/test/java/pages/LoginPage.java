@@ -1,6 +1,5 @@
-package Pages;
+package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +27,7 @@ public class LoginPage {
         @FindBy(xpath = "(//a[@class='oe_menu_toggler'])[6]/span")
      public WebElement eventsButton;
 
-    public void logginIn(String username, String password) throws InterruptedException {
+    public void logginIn(String username, String password)  {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         logInButton.click();
