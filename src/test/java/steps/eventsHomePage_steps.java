@@ -30,4 +30,35 @@ public class eventsHomePage_steps {
     public void user_is_able_to_see_next_page_of_upcoming_events() {
 
     }
+
+    @Given("User clicks calendar button")
+    public void user_clicks_calendar_button() {
+        homePage.calendarButton.click();
+
+    }
+
+    @Then("User is able to see calendar")
+    public void user_is_able_to_see_calendar() {
+        Assert.assertTrue(homePage.todayButtonOnCalendar.isDisplayed());
+    }
+
+    @Given("User clicks pivot button")
+    public void user_clicks_pivot_button() {
+homePage.pivotButton.click();
+    }
+
+    @Given("User is able to see breakdown of events")
+    public void user_is_able_to_see_breakdown_of_events() {
+Assert.assertTrue(homePage.measuresButtonOnPivot.isDisplayed());
+    }
+
+    @Then("User clicks Kanban button")
+    public void user_clicks_Kanban_button() {
+
+    }
+
+    @Then("User is again on the home page")
+    public void user_is_again_on_the_home_page() {
+
+    }
 }
