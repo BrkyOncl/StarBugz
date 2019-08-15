@@ -18,9 +18,10 @@ public class SearchFunction_Steps {
 
 
     @Given("User is on the events page")
-    public void user_is_on_the_events_page()  {
+    public void user_is_on_the_events_page()  throws InterruptedException{
         Driver.getDriver().get(Config.getProperty("url"));
         lp.logginIn(Config.getProperty("username"), Config.getProperty("password"));
+        Thread.sleep(3000);
         lp.eventsButton.click();
     }
 

@@ -71,6 +71,14 @@ public class HomePage {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o-kanban-button-new btn-default']")
     public WebElement createButton;
 
+    @FindBy(xpath = "//button[@class = 'o_calendar_button_today btn btn-sm btn-primary']")
+    public WebElement todayButtonOnCalendar;
+
+    @FindBy(xpath = "//button[@class = 'btn btn-primary btn-sm dropdown-toggle']")
+    public WebElement measuresButtonOnPivot;
+
+
+
 
 
 

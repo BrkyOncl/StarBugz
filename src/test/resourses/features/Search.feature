@@ -1,5 +1,5 @@
 @EventsSmoke
-  Feature: Brite Events Funstionality
+  Feature: Brite Events Functionality
 
       @rabia
      Scenario: User should be able to see default values on the search box
