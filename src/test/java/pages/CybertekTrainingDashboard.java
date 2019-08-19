@@ -130,6 +130,19 @@ public class CybertekTrainingDashboard {
     @FindBy(xpath = "(//div[@class='profile-widget'])[89]/div[2]/div/a[2]")
     public WebElement teacherDeleteButton;
 
+    @FindBy(xpath = "//div[@id='sidebar-menu']/ul/li[4]/ul/li")
+    public WebElement allStudents;
+
+
+    @FindBy(xpath = "//div[@class='col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3']/div/h4")
+    public List<WebElement> listOfStudent ;
+
+
+
+    @FindBy(xpath = "(//div[@class='profile-widget'])[46]/div[2]/div/a[2]")
+    public WebElement deleteStudent;
+
+
 
 
 

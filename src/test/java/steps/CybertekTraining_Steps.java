@@ -346,31 +346,74 @@ CybertekTraining_Steps {
 
     @Then("user should be able to see new student created")
     public void user_should_be_able_to_see_new_student_created() {
-        assertTrue("New student is not displaying as expected in UI",cybertekTrainingDashboard.newStudent.isDisplayed());
+        assertTrue("New student is not displaying as expected",cybertekTrainingDashboard.newStudent.isDisplayed());
+        try {
+            Connection connection = DriverManager.getConnection(Config.getProperty("urlSQL"),
+                    Config.getProperty("usernameSQL"),
+                    Config.getProperty("passwordSQL")
+            );
+            Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet resultSet = statement.executeQuery("select first_name from student");
+
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            int columnCount = metaData.getColumnCount();
 
 
+            List<Map<String, Object>> myTable = new ArrayList<>();
+
+            while(resultSet.next()){
+
+                Map<String, Object> map = new HashMap<>();
+
+                for(int i=1; i<=columnCount; i++){
+                    map.put(metaData.getColumnName(i), resultSet.getObject(i));
+                }
+
+                myTable.add(map);
+            }
+
+
+            for(Map<String, Object> m: myTable){
+                if(!m.get("FIRST_NAME").equals("Gokce")){
+                    continue;
+                }
+                assertTrue(m.get("FIRST_NAME").equals("Gokce"));
+                break;
+            }
+
+
+        } catch (SQLException e) {
+
+            System.out.println("Failed to open connection!");
+        }
     }
 
 
     @When("user clicks on All Student section")
     public void user_clicks_on_All_Student_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
     }
 
-    @When("user clicks on the student to be deleted")
-    public void user_clicks_on_the_student_to_be_deleted() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
+
+    @When("user clicks on the student to be deleted and delete")
+    public void user_clicks_on_the_student_to_be_deleted_and_delete() {
+        List<WebElement> listS = cybertekTrainingDashboard.listOfStudent;
+        for(WebElement sTeacher: listS){
+            if(sTeacher.getText().equals("Gokce")){
+                cybertekTrainingDashboard.deleteStudent.click();
+            }
+        }
     }
+
+
 
     @Then("user verifies delete deleted")
     public void user_verifies_delete_deleted() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
 
 
+}
 
 
 }
