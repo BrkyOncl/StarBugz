@@ -4,6 +4,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.junit.Assert.*;
 
 public class
 CybertekTraining_Steps {
@@ -136,7 +140,7 @@ CybertekTraining_Steps {
 
     @Then("user should be able to see new teacher created")
     public void user_should_be_able_to_see_new_teacher_created() {
-        Assert.assertTrue("New teacher is not displaying as expected",cybertekTrainingDashboard.newTeacher.isDisplayed());
+        assertTrue("New teacher is not displaying as expected",cybertekTrainingDashboard.newTeacher.isDisplayed());
         try {
             Connection connection = DriverManager.getConnection(Config.getProperty("urlSQL"),
                     Config.getProperty("usernameSQL"),
@@ -168,7 +172,7 @@ CybertekTraining_Steps {
                 if(!m.get("FIRST_NAME").equals("Rabia")){
                     continue;
                 }
-                Assert.assertTrue(m.get("FIRST_NAME").equals("Rabia"));
+                assertTrue(m.get("FIRST_NAME").equals("Rabia"));
                 break;
             }
 
@@ -188,26 +192,25 @@ CybertekTraining_Steps {
 
     @When("user clicks on All Teacher section")
     public void user_clicks_on_All_Teacher_section() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+       cybertekTrainingDashboard.allTeachers.click();
     }
 
-    @When("user clicks on the teacher to be deleted")
-    public void user_clicks_on_the_teacher_to_be_deleted() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
+
+    @When("user clicks on the teacher to be deleted and delete it")
+    public void user_clicks_on_the_teacher_to_be_deleted_and_delete_it() {
+        List<WebElement> listt = cybertekTrainingDashboard.listOfTeacher;
+        for(WebElement sTeacher: listt){
+            if(sTeacher.getText().equals("Rabia")){
+                cybertekTrainingDashboard.teacherDeleteButton.click();
+            }
+        }
     }
 
-    @When("user clicks on delete")
-    public void user_clicks_on_delete() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
 
     @Then("user verifies teacher deleted")
     public void user_verifies_teacher_deleted() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+
     }
 
 
@@ -343,7 +346,7 @@ CybertekTraining_Steps {
 
     @Then("user should be able to see new student created")
     public void user_should_be_able_to_see_new_student_created() {
-        Assert.assertTrue("New student is not displaying as expected in UI",cybertekTrainingDashboard.newStudent.isDisplayed());
+        assertTrue("New student is not displaying as expected in UI",cybertekTrainingDashboard.newStudent.isDisplayed());
 
 
     }

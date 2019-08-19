@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class CybertekTrainingDashboard {
 
     private WebDriver driver;
@@ -116,8 +118,20 @@ public class CybertekTrainingDashboard {
     @FindBy (xpath = "(//div[@class='profile-widget'])[8]/h4/a")
     public WebElement newStudent;
 
-    @FindBy (xpath = "//div[@id='sidebar-menu']/ul/li[3]/ul/li[2]/a")
+    @FindBy (xpath = "//div[@id='sidebar-menu']/ul/li[3]/ul/li/a")
     public WebElement allTeachers;
+
+    @FindBy(xpath = "//div[@class='col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3']/div/div[3]")
+    public List<WebElement> listOfTeacher;
+
+    @FindBy (xpath = "//div[@class='row staff-grid-row']/div[89]/div/div[2]/a/i")
+    public WebElement threeDotOptions;
+
+    @FindBy(xpath = "(//div[@class='profile-widget'])[89]/div[2]/div/a[2]")
+    public WebElement teacherDeleteButton;
+
+
+
 
 
 
