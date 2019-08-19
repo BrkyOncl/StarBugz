@@ -64,8 +64,7 @@
       Given User is on main page of cybertek training
       When user clicks on Teachers module
       And user clicks on All Student section
-      And user clicks on the student to be deleted
-      And user clicks on delete
+      And user clicks on the student to be deleted and delete
       Then user verifies delete deleted
 
 
