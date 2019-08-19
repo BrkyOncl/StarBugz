@@ -15,6 +15,7 @@ public class CybertekTrainingDashboard {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy (xpath = "//div[@id='sidebar-menu']/ul/li[3]/a")
     public WebElement teachersModule ;
 
@@ -114,6 +115,15 @@ public class CybertekTrainingDashboard {
 
     @FindBy (xpath = "(//div[@class='profile-widget'])[8]/h4/a")
     public WebElement newStudent;
+
+    @FindBy (xpath = "//div[@id='sidebar-menu']/ul/li[3]/ul/li[2]/a")
+    public WebElement allTeachers;
+
+
+
+
+
+
 
 
 }

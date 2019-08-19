@@ -21,6 +21,14 @@
       And user clicks on Permanent Address and type "2700 Desplanes"
       And user clicks on Submit button
       Then user should be able to see new teacher created
+@Rabia
+    Scenario: Admin user should be able to delete a teacher
+      Given User is on main page of cybertek training
+      When user clicks on Teachers module
+      And user clicks on All Teacher section
+      And user clicks on the teacher to be deleted
+      And user clicks on delete
+      Then user verifies teacher deleted
 
       @Rabia
       Scenario: Admin user should be able to create a student
@@ -51,6 +59,15 @@
         Then user clicks on submit button
         Then user should be able to see new student created
 
+    @Rabia
+
+    Scenario: Admin user should be able to delete a student
+      Given User is on main page of cybertek training
+      When user clicks on Teachers module
+      And user clicks on All Student section
+      And user clicks on the student to be deleted
+      And user clicks on delete
+      Then user verifies delete deleted
 
 
 
