@@ -412,6 +412,7 @@ CybertekTraining_Steps {
     @Then("user verifies delete deleted")
     public void user_verifies_delete_deleted() {
 
+        cybertekTrainingDashboard.deleteStudent.click();
 
 }
 
